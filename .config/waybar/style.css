@@ -1,0 +1,96 @@
+* {
+    transition: none;
+	font-family: "JetBrainsMono NF";
+	font-size: 12.5px;
+	color: #d0d0d0;
+}
+
+
+#waybar {
+    background-color:  rgba(0,0,0, 0.6);
+    border-radius: 10px;
+    border: solid 3px rgba(0,0,0,0.2);
+}
+
+tooltip {
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+#custom-launcher {
+	margin: 4px 1px 8px 5px;
+	padding: 0 6px;
+    font-size: 24px;
+	background-color: transparent;
+	border-radius: 10px;
+	min-width: 15px;
+    color: #cc0403;
+}
+
+#workspaces {
+	margin: 0 3px;
+	color: transparent;
+}
+
+#workspaces button {
+	margin: 3px 0;
+  padding: 0 4px;
+}
+
+#workspaces button:hover {
+	border: 1px solid #cc0403;
+  background-color: transparent;
+}
+
+#workspaces button.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0px;
+}
+
+#workspaces button.empty {
+}
+
+#workspaces button.urgent * {
+}
+
+#tray {
+	margin: 3px 2px;
+	border-radius: 0px;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+#tray menu {
+	background-color: #291f20;
+}
+
+#tray * {
+	padding: 0 6px;
+}
+
+#mode,
+#battery,
+#cpu,
+#network,
+#pulseaudio,
+#backlight,
+#clock {
+	margin: 4px 2px;
+	padding: 0 6px;
+	border-radius: 20px;
+	min-width: 10px;
+	background-color: transparent;
+}
+
+#clock {
+	margin: 4px 2px;
+}
+
+#custom-power {
+	margin: 4px 5px 4px 1px;
+	padding: 0 6px;
+	background-color: transparent;
+	border-radius: 10px;
+	min-width: 15px;
+    color: #cc0403
+}
