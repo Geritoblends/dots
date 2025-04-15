@@ -74,6 +74,7 @@ require("lazy").setup({
 })
 
 vim.opt.clipboard = "unnamedplus"
+vim.o.laststatus = 0
 
 -- Set up colorscheme
 vim.cmd([[
@@ -83,3 +84,5 @@ vim.cmd([[
 ]])
 
 require("mason").setup()
+
+

@@ -3,8 +3,8 @@
 	font-family: "JetBrainsMono NF";
 	font-size: 12.5px;
 	color: #d0d0d0;
-}
 
+}
 
 #waybar {
     background-color:  rgba(0,0,0, 0.6);
@@ -35,12 +35,14 @@ tooltip {
 
 #workspaces button {
 	margin: 3px 0;
-  padding: 0 4px;
+    padding: 0 4px;
 }
 
 #workspaces button:hover {
-	border: 1px solid #cc0403;
-  background-color: transparent;
+    background-image: none;
+    border: inherit;
+    box-shadow: none;
+    font-weight: inherit;
 }
 
 #workspaces button.active {

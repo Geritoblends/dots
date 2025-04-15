@@ -16,6 +16,7 @@ alias waybarcss="nvim -n ~/.config/waybar/style.css"
 alias mm="micromamba"
 alias musictui="ncmpcpp"
 alias nvimconf="nvim -n ~/.config/nvim/init.lua"
+alias snvim="sudo -E nvim"
 
 export MAMBA_ROOT_PREFIX=/mnt/hdd/micromamba
 
