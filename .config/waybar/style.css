@@ -63,7 +63,7 @@ tooltip {
 }
 
 #tray menu {
-	background-color: #291f20;
+	background-color: rgba(0, 0, 0, 0.6);
 }
 
 #tray * {
