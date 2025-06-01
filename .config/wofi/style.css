@@ -1,30 +1,26 @@
 * {
-    color: #d0d0d0;
-    font-family: "JetBrains NF"
+    color: #f2f4f8;
+    font-family: "JetBrainsMono NF", monospace;
 }
 
 window {
-    border: 2px solid rgba(0, 0, 0, 0.2);
+    border: 4px solid #be95ff;
     padding: 20px;
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 15px;
+    background-color: alpha(#16161e, 0.8);
+    border-radius: 0px;
 }
 
 #input {
     font-size: 24px;
     margin: 25px;
-    border-radius: 15px;
-    background-color: rgba(255,255,255,0.1);
-    border: solid 3px rgba(0,0,0,0.2);
-    color: #d0d0d0;
+    background-color: alpha(#be95ff, 0.1);
+    border: none;
+    padding: 10px;
+    color: #f2f4f8;
 }
 
 image {
-    color: red;
-}
-
-#input {
-    fill: red;
+    color: #ee5396;
 }
 
 #input:focus {
@@ -33,20 +29,21 @@ image {
 
 #entry {
     margin: 0px 25px 16px 25px;
-    border-radius: 15px;
     font-size: 24px;
+    transiion: ease 0.3s;
 }
 
 #entry:selected {
-    background-color: transparent;
+    background-color: alpha(#be95ff, 0.1);
     border: none;
-    color: #ff0000;
+    padding: 10px;
+    color: #78a9ff;
     margin-left: 55px;
 }
 
 #entry:selected #text {
-    color: red;
-}
+    color: #ff7eb6;
+ 
 
 #entry:focus, #entry:active {
     box-shadow: none;
@@ -55,13 +52,12 @@ image {
 }
 
 *:focus, *:active {
-    color: red;
+    color: #78a9ff;
 }
 
 #unselected {
     margin-left: 30px;
 }
-
 
 scrollbar {
     opacity: 0;

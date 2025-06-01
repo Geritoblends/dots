@@ -1,73 +1,75 @@
+@define-color accent #be95ff;
+
+
 * {
     transition: none;
-	font-family: "JetBrainsMono NF";
-	font-size: 12.5px;
-	color: #d0d0d0;
-
+    font-family: "Inter", "JetBrainsMono NF";
+    font-size: 14px;
+    color: #f2f4f8; /* foreground */
 }
 
 #waybar {
-    background-color:  rgba(0,0,0, 0.6);
-    border-radius: 10px;
-    border: solid 3px rgba(0,0,0,0.2);
+    background-color: alpha(#222222, 0.6);
+    border-radius: 0px;
+    border-bottom: solid 2px #ffffff;
+}
+
+.modules-left, .modules-right {
+    border-radius: 0px;
+    border-top: none;
+    border: none;
+    background-color: transparent;
 }
 
 tooltip {
-	border-radius: 10px;
-	background-color: rgba(0, 0, 0, 0.6);
-	border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: rgba(15, 17, 26, 0.9); /* background */
+    border: 1px solid rgba(82, 82, 82, 0.5); /* bright0 */
+    color: #f2f4f8;
 }
 
-#custom-launcher {
-	margin: 4px 1px 8px 5px;
-	padding: 0 6px;
-    font-size: 24px;
-	background-color: transparent;
-	border-radius: 10px;
-	min-width: 15px;
-    color: #cc0403;
-}
-
-#workspaces {
-	margin: 0 3px;
-	color: transparent;
+#custom-apple {
+    margin: 0px 1px 0px 10px;
+    padding: 0px 6px;
+    background-color: transparent;
+    border-radius: 10px;
+    min-width: 15px;
 }
 
 #workspaces button {
-	margin: 3px 0;
-    padding: 0 4px;
+    transition: ease-in-out 0.2s;
+    padding: 0px 3px;
+    border: solid 2px transparent;
+    color: alpha(#f2f4f8, 0.5);
+    border-bottom: none;
+    border-radius: 5px 5px 0px 0px;
 }
 
 #workspaces button:hover {
-    background-image: none;
-    border: inherit;
     box-shadow: none;
-    font-weight: inherit;
+    font-weight: normal;
+    background-image: none;
+    border-color: #ffffff;
+    background-color: transparent;
 }
 
 #workspaces button.active {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 0px;
-}
-
-#workspaces button.empty {
-}
-
-#workspaces button.urgent * {
+    color: #f2f4f8;
+    border-color: #ffffff;
+    background-color: transparent;
 }
 
 #tray {
-	margin: 3px 2px;
-	border-radius: 0px;
-	background-color: rgba(0, 0, 0, 0.2);
+    margin: 0px 2px;
+    border-radius: 0px;
 }
 
 #tray menu {
-	background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(15, 17, 26, 0.95);
 }
 
 #tray * {
-	padding: 0 6px;
+    padding: 0px 6px;
 }
 
 #mode,
@@ -77,22 +79,28 @@ tooltip {
 #pulseaudio,
 #backlight,
 #clock {
-	margin: 4px 2px;
-	padding: 0 6px;
-	border-radius: 20px;
-	min-width: 10px;
-	background-color: transparent;
+    padding: 0px 6px;
+    border-radius: 20px;
+    min-width: 10px;
+    background-color: transparent;
 }
 
-#clock {
-	margin: 4px 2px;
+#battery.charging {
+    color: #42be65; /* green */
 }
 
 #custom-power {
-	margin: 4px 5px 4px 1px;
-	padding: 0 6px;
-	background-color: transparent;
-	border-radius: 10px;
-	min-width: 15px;
-    color: #cc0403
+    margin: 0px 5px 0px 1px;
+    padding: 0px 6px;
+    background-color: transparent;
+    border-radius: 10px;
+    min-width: 15px;
+}
+
+#cpu, #memory, #bluetooth, #custom-spotlight, #network, #custom-apple {
+    color: @accent;
+}
+
+#clock {
+    margin-right: 10px;
 }
