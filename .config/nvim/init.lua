@@ -151,9 +151,10 @@ require("lazy").setup({
         end,
         config = function()
             require("nvim-treesitter.configs").setup({
-                ensure_installed = { "lua", "vim", "bash", "markdown", "python", "javascript", "typescript", "tsx", "html", "css", "markdown", "markdown_inline", "json" },
+                ensure_installed = { "lua", "vim", "bash", "markdown", "python", "javascript", "typescript", "tsx", "html", "css" },
                 highlight = { enable = true },
                 indent = { enable = true },
+                autotag = { enable = true },
             })
         end,
     },
@@ -222,7 +223,53 @@ require("lazy").setup({
         },
     },
     {
-
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require('lualine').setup({
+                options = {
+                    icons_enabled = true,
+                    theme = 'auto',
+                    component_separators = { left = '', right = '' },
+                    section_separators = { left = '', right = '' },
+                    disabled_filetypes = {
+                        statusline = {},
+                        winbar = {},
+                    },
+                    ignore_focus = {},
+                    always_divide_middle = true,
+                    always_show_tabline = true,
+                    globalstatus = false,
+                    refresh = {
+                        statusline = 100,
+                        tabline = 100,
+                        winbar = 100,
+                    }
+                },
+                sections = {
+                    lualine_a = { 'mode' },
+                    lualine_b = { 'branch', 'diff', 'diagnostics' },
+                    lualine_c = { 'filename' },
+                    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+                    lualine_y = { 'progress' },
+                    lualine_z = { 'location' }
+                },
+                inactive_sections = {
+                    lualine_a = {},
+                    lualine_b = {},
+                    lualine_c = { 'filename' },
+                    lualine_x = { 'location' },
+                    lualine_y = {},
+                    lualine_z = {}
+                },
+                tabline = {},
+                winbar = {},
+                inactive_winbar = {},
+                extensions = {}
+            })
+        end,
+    },
+    {
         "sphamba/smear-cursor.nvim",
 
         opts = {
@@ -243,117 +290,8 @@ require("lazy").setup({
             -- Smear cursor in insert mode.
             -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
             smear_insert_mode = true,
-        }
-    },
-    -- lazy.nvim
-    {
-        "folke/noice.nvim",
-        event = "VeryLazy",
-        opts = {
         },
-        dependencies = {
-            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-            "MunifTanjim/nui.nvim"
-            -- OPTIONAL:
-            --   `nvim-notify` is only needed, if you want to use the notification view.
-            --   If not available, we use `mini` as the fallback
-        }
-    },
-    {
-        "karb94/neoscroll.nvim",
-        opts = {},
-    },
-    {
-        "goolord/alpha-nvim",
-        -- dependencies = { 'echasnovski/mini.icons' },
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function()
-            local startify = require("alpha.themes.startify")
-            -- available: devicons, mini, default is mini
-            -- if provider not loaded and enabled is true, it will try to use another provider
-            startify.file_icons.provider = "devicons"
-            require("alpha").setup(
-                startify.config
-            )
-        end,
-    },
-    {
-        'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
-    },
-})
-require("colors.oxocabron").setup()
-
--- In your lualine config file (e.g., lua/plugins/lualine.lua)
-require('lualine').setup({
-    options = {
-        theme = {
-            normal = {
-                a = { fg = '#f2f4f8', bg = 'NONE' }, -- Remove bg for active mode
-                b = { fg = '#f2f4f8', bg = 'NONE' },
-                c = { fg = '#f2f4f8', bg = 'NONE' }
-            },
-            insert = {
-                a = { fg = '#25be6a', bg = 'NONE' }, -- Your green from palette
-                b = { fg = '#f2f4f8', bg = 'NONE' },
-                c = { fg = '#f2f4f8', bg = 'NONE' }
-            },
-            visual = {
-                a = { fg = '#be95ff', bg = 'NONE' }, -- Your magenta from palette
-                b = { fg = '#f2f4f8', bg = 'NONE' },
-                c = { fg = '#f2f4f8', bg = 'NONE' }
-            },
-            replace = {
-                a = { fg = '#ee5396', bg = 'NONE' }, -- Your red from palette
-                b = { fg = '#f2f4f8', bg = 'NONE' },
-                c = { fg = '#f2f4f8', bg = 'NONE' }
-            },
-            command = {
-                a = { fg = '#78a9ff', bg = 'NONE' }, -- Your blue from palette
-                b = { fg = '#f2f4f8', bg = 'NONE' },
-                c = { fg = '#f2f4f8', bg = 'NONE' }
-            },
-            inactive = {
-                a = { fg = '#525252', bg = 'NONE' }, -- Your bright_black
-                b = { fg = '#525252', bg = 'NONE' },
-                c = { fg = '#525252', bg = 'NONE' }
-            }
-        },
-        component_separators = { left = '│', right = '│' },
-        section_separators = { left = '', right = '' },
-        disabled_filetypes = {
-            statusline = {},
-            winbar = {},
-        },
-        ignore_focus = {},
-        always_divide_middle = true,
-        globalstatus = false,
-        refresh = {
-            statusline = 1000,
-            tabline = 1000,
-            winbar = 1000,
-        }
-    },
-    sections = {
-        lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_b = {},
-        lualine_c = { 'filename' },
-        lualine_x = { 'location' },
-        lualine_y = {},
-        lualine_z = {}
-    },
-    tabline = {},
-    winbar = {},
-    inactive_winbar = {},
-    extensions = {}
+    }
 })
 -- Basic keymaps
 vim.keymap.set("n", "<leader>w", ":w<CR>")
@@ -362,6 +300,9 @@ vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-j>", "<C-w>j")
 vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<leader>rp", ":w<CR>:!poetry run python %<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>rr", ":w<CR>:!Rscript %<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>rg", ":w<CR>:!go run %<CR>", { noremap = true, silent = false })
 
 -- Add this to the end of your init.lua file
 
@@ -394,3 +335,5 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.api.nvim_buf_set_keymap(0, 't', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
     end,
 })
+
+require("colors.maincolorscheme").setup()

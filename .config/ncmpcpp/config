@@ -1,0 +1,16 @@
+# ~/.ncmpcpp/config
+mpd_host = localhost
+mpd_port = 6600
+mpd_music_dir = ~/Music
+lyrics_directory = ~/.lyrics
+ncmpcpp_directory = ~/.ncmpcpp
+
+# UI settings
+user_interface = classic
+default_place_to_search_in = database
+browser_display_mode = columns
+search_engine_display_mode = columns
+# Vim-like keybindings for ncmpcpp
+# Add to ~/.config/ncmpcpp/config
+
+

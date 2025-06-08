@@ -1,106 +1,174 @@
-@define-color accent #be95ff;
-
+@define-color bg_h         #1d2021; /* Hard contrast background */
+@define-color bg           #282828; /* Normal background */
+@define-color bg_s         #32302f; /* Soft contrast background */
+@define-color bg0_h        #1d2021; /* Hard contrast background */
+@define-color bg0          #282828; /* Normal background */
+@define-color bg0_s        #32302f; /* Soft contrast background */
+@define-color bg1          #3c3836; /* Darker background */
+@define-color bg2          #504945; /* Darkish background */
+@define-color bg3          #665c54; /* Dark background highlight */
+@define-color bg4          #7c6f64; /* Dark background highlight */
+@define-color fg           #ebdbb2; /* Default foreground */
+@define-color fg0          #fbf1c7; /* Light foreground */
+@define-color fg1          #ebdbb2; /* Default foreground */
+@define-color fg2          #d5c4a1; /* Darkish foreground */
+@define-color fg3          #bdae93; /* Dark foreground */
+@define-color fg4          #a89984; /* Darker foreground */
+@define-color red          #cc241d; /* Red */
+@define-color green        #98971a; /* Green */
+@define-color yellow       #d79921; /* Yellow */
+@define-color blue         #458588; /* Blue */
+@define-color purple       #b16286; /* Purple */
+@define-color aqua         #689d6a; /* Aqua */
+@define-color orange       #d65d0e; /* Orange */
+@define-color gray         #928374; /* Gray */
+@define-color red_bright   #fb4934; /* Bright Red */
+@define-color green_bright #b8bb26; /* Bright Green */
+@define-color yellow_bright #fabd2f; /* Bright Yellow */
+@define-color blue_bright  #83a598; /* Bright Blue */
+@define-color purple_bright #d3869b; /* Bright Purple */
+@define-color aqua_bright  #8ec07c; /* Bright Aqua */
+@define-color orange_bright #fe8019; /* Bright Orange */
+@define-color gray_bright  #a89984; /* Bright Gray */
 
 * {
-    transition: none;
-    font-family: "Inter", "JetBrainsMono NF";
-    font-size: 14px;
-    color: #f2f4f8; /* foreground */
+	font-family: "Inter", "JetBrains Mono NF";
+	font-size: 13px;
+	color: #ebdbb2;
+    text-shadow: none;
 }
 
 #waybar {
-    background-color: alpha(#222222, 0.6);
-    border-radius: 0px;
-    border-bottom: solid 2px #ffffff;
+    background-color:  rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #ebdbb2;
 }
 
-.modules-left, .modules-right {
-    border-radius: 0px;
-    border-top: none;
-    border: none;
-    background-color: transparent;
-}
 
 tooltip {
-    border-radius: 12px;
-    background-color: rgba(15, 17, 26, 0.9); /* background */
-    border: 1px solid rgba(82, 82, 82, 0.5); /* bright0 */
-    color: #f2f4f8;
+	border-radius: 10px;
+    background-color:  alpha(black, 0.5);
+    border: solid 2px #ebdbb2;
 }
 
 #custom-apple {
-    margin: 0px 1px 0px 10px;
-    padding: 0px 6px;
-    background-color: transparent;
-    border-radius: 10px;
-    min-width: 15px;
+    margin-left: 15px;
+}
+
+#workspaces {
+	margin: 0 3px;
 }
 
 #workspaces button {
-    transition: ease-in-out 0.2s;
-    padding: 0px 3px;
-    border: solid 2px transparent;
-    color: alpha(#f2f4f8, 0.5);
-    border-bottom: none;
+	margin: 0px 3px;
+    padding: 0 4px;
     border-radius: 5px 5px 0px 0px;
 }
 
 #workspaces button:hover {
-    box-shadow: none;
-    font-weight: normal;
     background-image: none;
-    border-color: #ffffff;
-    background-color: transparent;
+    border: inherit;
+    box-shadow: none;
+    font-weight: inherit;
 }
 
 #workspaces button.active {
-    color: #f2f4f8;
-    border-color: #ffffff;
     background-color: transparent;
+    border: solid 2px #ebdbb2;
+}
+
+#workspaces button.empty {
+}
+
+#workspaces button.urgent * {
 }
 
 #tray {
-    margin: 0px 2px;
-    border-radius: 0px;
+	margin: 0px 2px;
+	border-radius: 0px;
+	background-color: rgba(200, 160, 160, 0.7);
 }
 
 #tray menu {
-    background-color: rgba(15, 17, 26, 0.95);
+    background-color:  rgba(255, 222, 222, 0.7);
 }
 
 #tray * {
-    padding: 0px 6px;
+	padding: 0 6px;
 }
 
 #mode,
 #battery,
 #cpu,
 #network,
+#memory,
+#custom-spotlight,
+#bluetooth,
 #pulseaudio,
 #backlight,
 #clock {
-    padding: 0px 6px;
-    border-radius: 20px;
-    min-width: 10px;
-    background-color: transparent;
-}
-
-#battery.charging {
-    color: #42be65; /* green */
-}
-
-#custom-power {
-    margin: 0px 5px 0px 1px;
-    padding: 0px 6px;
-    background-color: transparent;
-    border-radius: 10px;
-    min-width: 15px;
-}
-
-#cpu, #memory, #bluetooth, #custom-spotlight, #network, #custom-apple {
-    color: @accent;
+	margin: 0px 2px;
+	padding: 0px 6px;
+	border-radius: 20px;
+	background-color: transparent;
 }
 
 #clock {
-    margin-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
+
+#cpu, #memory, #bluetooth, #network, #custom-spotlight {
+    color: #d79921;
+}
+
+#custom-apple {
+    color: #d79921;
+}
+
+#clock:hover, 
+#custom-notification:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover, 
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#custom-finder:hover,
+#custom-spotlight:hover {
+    transition: all .1s ease;
+    color: @blue_bright;
+}
+
+#battery {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color: @fg;
+}
+
+#battery.charging {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @orange;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.charging.full {
+    color: @orange_bright;
+}
+
+@keyframes blink {
+    to {
+        color: @fg;
+    }
+}
+

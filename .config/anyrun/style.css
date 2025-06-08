@@ -1,47 +1,55 @@
 entry {
-  min-height: 40px;
-  background-color: alpha(#222222, 0.4); /* Updated to match waybar background */
-  color: rgba(242, 244, 248, 0.6); /* Updated to match waybar foreground */
-  border: solid 3px white; /* Changed to purple from waybar */
-    border-radius: 12px 12px 0px 0px;
-  /* border: solid 4px alpha(#ebdbb2, 0.6); */
-  border-bottom: none;
-  font-size: 22px;
-  box-shadow: none;
+border-radius: 20px 20px 0px 0px;
+min-height: 40px;
+background-color: alpha(black, 0.5);
+color: alpha(#ebdbb2, 1);
+border: solid 4px alpha(#ebdbb2, 1);
+border-bottom: none;
+font-size: 22px;
+box-shadow: none;
 } 
-entry placeholder {
-  color: #ffffff; /* Changed to purple from waybar */
-}
+
 entry:focus {
   outline: none;
 }
+
+
 window {
   background-color: transparent;
 }
+
+
 list {
-  background-color: alpha(#222222, 0.4); /* Updated to match waybar background */
-  min-height: 20px;
-  /* border: solid 4px alpha(#ebdbb2, 0.6); */
-  border: solid 3px white; /* Changed to purple from waybar */
-  border-top: none;
-    border-radius: 0px 0px 12px 12px;
+border-radius: 0px 0px 20px 20px;
+background-color: alpha(black, 0.5);
+min-height: 20px;
+/* border: solid 4px alpha(#ebdbb2, 0.6); */
+border: solid 4px alpha(#ebdbb2, 1);
+border-top: none;
 }
+
 list list {
-  box-shadow: none;
-  background-color: transparent;
-  border: none;
+box-shadow: none;
+border-radius:0px;
+background-color: transparent;
+border: none;
 }
+
 #match {
   background-color: transparent;
   padding: 2px;
   margin: 0px 6px 0px 6px;
+  border-radius: 8px;
 }
+
 #match:selected {
-  background-color: rgba(190, 149, 255, 0.2); /* Changed to match waybar purple */
+  background-color: alpha(#ebdbb2, 0.2);
 }
+
 #plugin label, #plugin image {
-  color: rgba(242, 244, 248, 0.8); /* Updated to match waybar foreground */
+	color: alpha(#ebdbb2, 0.8);
 }
+
 #plugin image {
-  margin-left: 10px;
+	margin-left: 10px;
 }

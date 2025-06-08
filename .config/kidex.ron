@@ -1,25 +1,20 @@
 Config(
-  ignored: [], // A list of patterns to be ignored in all directories
+  ignored: [], 
   directories: [
     WatchDir(
-      path: "/home/gero/Documents/tec", // The root folder to be indexed
-      recurse: true, // Recursively index and watch all subfolders
-      ignored: [], // Ignore patterns specifically for this directory
+      path: "/home/gero/Documents/tec", 
+      recurse: true, 
+      ignored: [], 
     ),
     WatchDir(
-      path: "/home/gero/Downloads", // The root folder to be indexed
-      recurse: true, // Recursively index and watch all subfolders
-      ignored: [], // Ignore patterns specifically for this directory
+      path: "/home/gero/Downloads", 
+      recurse: true, 
+      ignored: [], 
     ),
     WatchDir(
-      path: "/home/gero/Music", // The root folder to be indexed
-      recurse: true, // Recursively index and watch all subfolders
-      ignored: [], // Ignore patterns specifically for this directory
-    ),
-    WatchDir(
-      path: "/home/gero/Desktop", // The root folder to be indexed
-      recurse: true, // Recursively index and watch all subfolders
-      ignored: [], // Ignore patterns specifically for this directory
+      path: "/home/gero/Desktop", 
+      recurse: true, 
+      ignored: [], 
     ),
   ],
 )
