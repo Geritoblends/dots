@@ -32,8 +32,8 @@ function M.setup()
     hl(0, "VertSplit", { fg = palette.dark_gray, bg = palette.bg })
 
     -- Float/Popup windows
-    hl(0, "NormalFloat", { fg = palette.fg, bg = palette.bg })
-    hl(0, "FloatBorder", { fg = palette.gray, bg = palette.bg })
+    hl(0, "NormalFloat", { fg = palette.fg, bg = "#282828" })
+    hl(0, "FloatBorder", { fg = palette.gray, bg = "#282828" })
 
     -- Treesitter and Syntax
     hl(0, "Comment", { fg = palette.gray, italic = true })

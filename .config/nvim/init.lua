@@ -62,24 +62,6 @@ require("lazy").setup({
             -- hey
         }
     },
-    {
-        'saghen/blink.cmp',
-        dependencies = {
-            {
-                'rafamadriz/friendly-snippets'
-            },
-        },
-        version = 'v0.*',
-        opts = {
-            keymap = { preset = 'default' },
-
-            appearance = {
-                use_nvim_cmp_as_default = true,
-                nerd_font_variant = 'mono'
-            },
-            signature = { enabled = true }
-        },
-    },
 
     -- nvim-tree file explorer
     {
@@ -286,12 +268,16 @@ require("lazy").setup({
             -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
             -- Smears will blend better on all backgrounds.
             legacy_computing_symbols_support = false,
-
-            -- Smear cursor in insert mode.
-            -- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
             smear_insert_mode = true,
         },
-    }
+    },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+        },
+    },
 })
 -- Basic keymaps
 vim.keymap.set("n", "<leader>w", ":w<CR>")

@@ -29,3 +29,9 @@ alias deact='deactivate'
 alias hyprlockconf="nvim ~/.config/hypr/hyprlock.conf"
 alias neofetch="fastfetch"
 alias asciiquarium="asciiquarium --transparent"
+alias off="poweroff"
+alias notas="tjournal"
+
+#### temporales
+alias biologia="cd ~/Documents/projects/tec/biologia/project"
+

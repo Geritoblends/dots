@@ -26,6 +26,7 @@ min-height: 20px;
 /* border: solid 4px alpha(#ebdbb2, 0.6); */
 border: solid 4px alpha(#ebdbb2, 1);
 border-top: none;
+margin-bottom: 6px;
 }
 
 list list {
