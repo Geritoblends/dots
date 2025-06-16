@@ -1,0 +1,11 @@
+#!/bin/bash
+SOUND_FILE="$HOME/sounds/firework.mp3"
+
+while true; do
+    # Super dramatic range (0.4 to 2.2)
+    pitch=$(echo "scale=2; $(shuf -i 40-220 -n 1)/100" | bc)
+    
+    mpv --no-video --volume=$(shuf -i 50-100 -n 1) --speed=$pitch "$SOUND_FILE" &
+    
+    sleep $(echo "scale=2; $(shuf -i 30-400 -n 1)/100" | bc)
+done

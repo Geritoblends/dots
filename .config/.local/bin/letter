@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo -ne "\033]0;proposal_done\007"
+hyprctl dispatch movetoworkspacesilent 2, title:proposal_done
+
+pkill waybar
+swww img --transition-duration 1.5 --transition-type outer --transition-pos 0.854,0.977 --transition-step  90 ~/Pictures/Wallpapers/tulips.jpg
+sleep 3
+kitty --config ~/.config/kitty/kitty_proposal.conf --title proposal -- bash -c proposaltypewriter &
+

@@ -52,28 +52,32 @@ tooltip {
 
 #custom-apple {
     margin-left: 15px;
+    font-size: 20px;
 }
 
 #workspaces {
-	margin: 0 3px;
+	margin: 0 3px 5px 3px;
+    background-color: transparent;
+    border-radius: 0px 0px 15px 15px;
+
 }
 
 #workspaces button {
-	margin: 0px 3px;
-    padding: 0 4px;
-    border-radius: 5px 5px 0px 0px;
+    border-bottom: 1px solid transparent;
+    margin-bottom: 1px;
+    font-size: 5px;
+    border-radius: 8px;
+    padding: 0px;
+    padding-right: 4px;
+    background-image: none;
 }
 
 #workspaces button:hover {
-    background-image: none;
-    border: inherit;
-    box-shadow: none;
-    font-weight: inherit;
+    border-color: #ebdbb2;
 }
 
 #workspaces button.active {
-    background-color: transparent;
-    border: solid 2px #ebdbb2;
+    border-bottom: 1px solid #ebdbb2;
 }
 
 #workspaces button.empty {
@@ -82,10 +86,14 @@ tooltip {
 #workspaces button.urgent * {
 }
 
+
+
 #tray {
 	margin: 0px 2px;
 	border-radius: 0px;
-	background-color: rgba(200, 160, 160, 0.7);
+	background-color: alpha(black, 0.5);
+    border-bottom: 2px solid #ebdbb2;
+    color: @orange_bright;
 }
 
 #tray menu {
@@ -150,7 +158,12 @@ tooltip {
 }
 
 #battery.warning:not(.charging) {
-    color: @orange;
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #battery.critical:not(.charging) {
@@ -172,3 +185,10 @@ tooltip {
     }
 }
 
+#custom-cava {
+    margin: 0px 10px;
+}
+
+#mpd {
+    margin-top: 5px;
+}
