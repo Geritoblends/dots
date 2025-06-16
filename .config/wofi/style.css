@@ -1,26 +1,26 @@
 * {
-    color: #f2f4f8;
-    font-family: "JetBrainsMono NF", monospace;
+    color: #ebdbb2;
+    font-size: 16px;
+    font-family: "Inter"
 }
 
 window {
-    border: 4px solid #be95ff;
     padding: 20px;
-    background-color: alpha(#16161e, 0.8);
-    border-radius: 0px;
+    border-radius: 15px;
+    background-color: alpha(black, 0.2);
+    border: solid 2px #ebdbb2;
 }
 
 #input {
-    font-size: 24px;
     margin: 25px;
-    background-color: alpha(#be95ff, 0.1);
-    border: none;
-    padding: 10px;
-    color: #f2f4f8;
+    border-radius: 15px;
+    background-color: alpha(black, 0.4);
+    border: solid 2px #ebdbb2;
+    color: #ebdbb2;
 }
 
 image {
-    color: #ee5396;
+    color: #ebdbb2;
 }
 
 #input:focus {
@@ -29,21 +29,18 @@ image {
 
 #entry {
     margin: 0px 25px 16px 25px;
-    font-size: 24px;
-    transiion: ease 0.3s;
+    border-radius: 15px;
 }
 
 #entry:selected {
-    background-color: alpha(#be95ff, 0.1);
+    background-color: transparent;
     border: none;
-    padding: 10px;
-    color: #78a9ff;
     margin-left: 55px;
 }
 
 #entry:selected #text {
-    color: #ff7eb6;
- 
+    color: #fabd2f;
+}
 
 #entry:focus, #entry:active {
     box-shadow: none;
@@ -52,12 +49,13 @@ image {
 }
 
 *:focus, *:active {
-    color: #78a9ff;
+    color: inherit;
 }
 
 #unselected {
     margin-left: 30px;
 }
+
 
 scrollbar {
     opacity: 0;

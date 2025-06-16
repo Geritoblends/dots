@@ -23,6 +23,9 @@ cp -rf "$HOME/.config/wlogout/res/"* "$CONFIG_DIR/wlogout/res/"
 cp -f "$HOME/.config/anyrun/"* "$CONFIG_DIR/anyrun/"
 cp -f "$HOME/.config/kidex.ron" "$CONFIG_DIR/kidex.ron"
 
+# Wofi
+cp -rf "$HOME/.config/wofi/"* "$CONFIG_DIR/wofi/"
+
 # Waybar
 cp -rf "$HOME/.config/waybar/"* "$CONFIG_DIR/waybar/"
 

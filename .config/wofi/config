@@ -1,8 +1,8 @@
-width=800
+width=700
 show=drun
 prompt=Search
 insensitive=true
 allow_markup=true
-term=foot
+term=kitty
 location=center
 no_actions=true
