@@ -31,31 +31,31 @@ end
 vim.opt.rtp:prepend(lazypath)
 -- Plugin setup with lazy.nvim
 require("lazy").setup({
-    {
-        "Exafunction/windsurf.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        config = function()
-            require("codeium").setup({
-                virtual_text = {
-                    enabled = true,
-                    manual = false,
-                    key_bindings = {
-                        accept = "<M-i>",
-                        accept_word = false,
-                        accept_line = false,
-                        next = "<M-j>",
-                        prev = "<M-k>",
-                        dismiss = "<M-u>",
-                    },
-                },
-
-
-            })
-        end
-    },
+    -- {
+    --     "Exafunction/windsurf.nvim",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    --     config = function()
+    --         require("codeium").setup({
+    --             virtual_text = {
+    --                 enabled = true,
+    --                 manual = false,
+    --                 key_bindings = {
+    --                     accept = "<M-i>",
+    --                     accept_word = false,
+    --                     accept_line = false,
+    --                     next = "<M-j>",
+    --                     prev = "<M-k>",
+    --                     dismiss = "<M-u>",
+    --                 },
+    --             },
+    --
+    --
+    --         })
+    --     end
+    -- },
     {
         'numToStr/Comment.nvim',
         opts = {
@@ -136,7 +136,22 @@ require("lazy").setup({
                 ensure_installed = { "lua", "vim", "bash", "markdown", "python", "javascript", "typescript", "tsx", "html", "css" },
                 highlight = { enable = true },
                 indent = { enable = true },
-                autotag = { enable = true },
+            })
+            require('nvim-ts-autotag').setup({
+                opts = {
+                    -- Defaults
+                    enable_close = true,          -- Auto close tags
+                    enable_rename = true,         -- Auto rename pairs of tags
+                    enable_close_on_slash = false -- Auto close on trailing </
+                },
+                -- Also override individual filetype configs, these take priority.
+                -- Empty by default, useful if one of the "opts" global settings
+                -- doesn't work well in a specific filetype
+                per_filetype = {
+                    ["html"] = {
+                        enable_close = true
+                    }
+                }
             })
         end,
     },
@@ -278,6 +293,7 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         },
     },
+
 })
 -- Basic keymaps
 vim.keymap.set("n", "<leader>w", ":w<CR>")

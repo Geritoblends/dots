@@ -6,6 +6,9 @@
 # Starship prompt for zsh
 eval "$(starship init zsh)"
 
+# Vim mode
+# bindkey -v
+
 # # Enable zsh completion system
 # autoload -Uz compinit
 # compinit
@@ -43,13 +46,21 @@ alias hyprlockconf="nvim ~/.config/hypr/hyprlock.conf"
 alias neofetch="fastfetch"
 alias asciiquarium="asciiquarium --transparent"
 alias off="poweroff"
-alias notas="tjournal"
+alias notas="cd ~/Documents/notas"
 alias hyprpaperconf="nvim ~/.config/hypr/hyprpaper.conf"
 alias crb="cargo run --bin"
+alias ctb="cargo test --bin"
 alias changebg="hyprctl hyprpaper reload"
+alias clus="cd ~/Documents/projects/clusterium_server"
+alias del="rm -rf"
+alias jenny="cd ~/Documents/servers/jenny && ./run.sh"
+alias darkf="cd ~/Documents/servers/'servers mc'/darkf && ./start.sh"
+alias servers="cd ~/Documents/servers/'servers mc'"
+alias bindir="cd ~/.local/bin"
+alias appsdir="cd ~/.local/share/applications"
 
 # Temporales
-alias biologia="cd ~/Documents/projects/tec/biologia/project"
-alias biologia2="cd ~/Documents/projects/tec/biologia/project2"
-alias rsexercises="cd ~/Documents/projects/rs-exercises"
 alias rustlings="cd ~/Documents/projects/rustlings"
+alias todoapp="cd ~/Documents/projects/rs-exercises"
+alias cbs="crb structs1"
+

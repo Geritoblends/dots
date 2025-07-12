@@ -1,9 +1,11 @@
+
+
 entry {
 border-radius: 20px 20px 0px 0px;
 min-height: 40px;
 background-color: alpha(black, 0.5);
 color: alpha(#ebdbb2, 1);
-border: solid 4px alpha(#ebdbb2, 1);
+border: solid 2px alpha(#ebdbb2, 1);
 border-bottom: none;
 font-size: 22px;
 box-shadow: none;
@@ -15,7 +17,7 @@ entry:focus {
 
 
 window {
-  background-color: transparent;
+    background: transparent;
 }
 
 
@@ -24,7 +26,7 @@ border-radius: 0px 0px 20px 20px;
 background-color: alpha(black, 0.5);
 min-height: 20px;
 /* border: solid 4px alpha(#ebdbb2, 0.6); */
-border: solid 4px alpha(#ebdbb2, 1);
+border: solid 2px alpha(#ebdbb2, 1);
 border-top: none;
 margin-bottom: 6px;
 }

@@ -70,6 +70,7 @@ tooltip {
     padding: 0px;
     padding-right: 4px;
     background-image: none;
+    transition: all .4s ease;
 }
 
 #workspaces button:hover {
@@ -127,6 +128,7 @@ tooltip {
 
 #cpu, #memory, #bluetooth, #network, #custom-spotlight {
     color: #d79921;
+    transition: all .4s ease;
 }
 
 #custom-apple {
@@ -143,7 +145,6 @@ tooltip {
 #temperature:hover,
 #custom-finder:hover,
 #custom-spotlight:hover {
-    transition: all .1s ease;
     color: @blue_bright;
 }
 
