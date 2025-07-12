@@ -96,7 +96,7 @@ tooltip {
 }
 
 #workspaces button.empty * {
-    color: alpha(#282828, 0.5);
+    color: alpha(#000000, 0.3);
 }
 
 #workspaces button.active * {
@@ -126,7 +126,6 @@ tooltip {
 #tray * {
 	padding: 0 6px;
     color: @orange_bright;
-    fill: @orange_bright;
 }
 
 #mode,
