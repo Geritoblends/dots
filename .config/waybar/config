@@ -1,14 +1,11 @@
-
 {
         "layer": "top",
+        "margin": "0",
         "position": "top",
         "reload_style_on_change": true,
         "modules-left": ["custom/apple", "mpd", "custom/cava"],
         "modules-center": ["hyprland/workspaces"],
         "modules-right": ["tray", "cpu", "memory","bluetooth","network", "custom/spotlight", "battery", "clock"],
-
-
-
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
@@ -18,13 +15,13 @@
 		    "7":"󱂎",
 		    "8":"󱂏",
 		    "9":"󱂐",
-		    "10":" 󰬅",
+		    "10":"󰬅",
             "95":"",
-                "default": "",
-                "empty": ""
+            "default": "",
+            "empty": ""
             },
             "persistent-workspaces": {
-                "*": [ 1,2,3 ]
+                "*": [ 1,2,3,95 ]
             }
         },
         "custom/notification": {
