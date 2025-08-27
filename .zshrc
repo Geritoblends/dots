@@ -1,10 +1,13 @@
-# ~/.zshrc
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Starship prompt for zsh
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+
+
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+  eval "$(ssh-agent -s)"
+fi 
 
 # Vim mode
 # bindkey -v
@@ -19,6 +22,7 @@ export MAMBA_ROOT_PREFIX=/mnt/hdd/micromamba
 # Add local bin to PATH
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export DATABASE_URL="postgres://postgres:mysecretpassword@localhost:5432/postgres"
 
 # Aliases
 alias ls='ls --color=auto'
@@ -58,9 +62,15 @@ alias darkf="cd ~/Documents/servers/'servers mc'/darkf && ./start.sh"
 alias servers="cd ~/Documents/servers/'servers mc'"
 alias bindir="cd ~/.local/bin"
 alias appsdir="cd ~/.local/share/applications"
+alias tec="cd ~/Documents/tec"
+alias ccheck="cargo check"
+alias tree="tree -I target -I node_modules"
+alias home="cd ~"
 
 # Temporales
 alias rustlings="cd ~/Documents/projects/rustlings"
-alias todoapp="cd ~/Documents/projects/rs-exercises"
+alias todoapp="cd ~/Documents/projects/todoapp-rs"
 alias cbs="crb structs1"
-
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias sqlclient="psql -h localhost -U postgres"

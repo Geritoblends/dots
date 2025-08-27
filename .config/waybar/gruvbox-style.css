@@ -1,53 +1,55 @@
-@define-color bg_h         #191724; /* Hard contrast background */
-@define-color bg           #1f1d2e; /* Normal background */
-@define-color bg_s         #26233a; /* Soft contrast background */
-@define-color bg0_h        #191724; /* Hard contrast background */
-@define-color bg0          #1f1d2e; /* Normal background */
-@define-color bg0_s        #26233a; /* Soft contrast background */
-@define-color bg1          #2a273f; /* Darker background */
-@define-color bg2          #393552; /* Darkish background */
-@define-color bg3          #555169; /* Dark background highlight */
-@define-color bg4          #6e6a86; /* Dark background highlight */
-@define-color fg           #e0def4; /* Default foreground */
-@define-color fg0          #f0f0f0; /* Light foreground */
-@define-color fg1          #e0def4; /* Default foreground */
-@define-color fg2          #c4c7cd; /* Darkish foreground */
-@define-color fg3          #908caa; /* Dark foreground */
-@define-color fg4          #6e6a86; /* Darker foreground */
-@define-color red          #eb6f92; /* Red */
-@define-color green        #9ccfd8; /* Green */
-@define-color yellow       #f6c177; /* Yellow */
-@define-color blue         #31748f; /* Blue */
-@define-color purple       #eb6f92; /* Purple */
-@define-color aqua         #ebbcba; /* Aqua */
-@define-color orange       #ea9a97; /* Orange */
-@define-color gray         #908caa; /* Gray */
-@define-color red_bright   #eb6f92; /* Bright Red */
-@define-color green_bright #9ccfd8; /* Bright Green */
-@define-color yellow_bright #f6c177; /* Bright Yellow */
-@define-color blue_bright  #31748f; /* Bright Blue */
-@define-color purple_bright #c4a7e7; /* Bright Purple */
-@define-color aqua_bright  #ebbcba; /* Bright Aqua */
-@define-color orange_bright #ea9a97; /* Bright Orange */
-@define-color gray_bright  #908caa; /* Bright Gray */
+@define-color bg_h         #1d2021; /* Hard contrast background */
+@define-color bg           #282828; /* Normal background */
+@define-color bg_s         #32302f; /* Soft contrast background */
+@define-color bg0_h        #1d2021; /* Hard contrast background */
+@define-color bg0          #282828; /* Normal background */
+@define-color bg0_s        #32302f; /* Soft contrast background */
+@define-color bg1          #3c3836; /* Darker background */
+@define-color bg2          #504945; /* Darkish background */
+@define-color bg3          #665c54; /* Dark background highlight */
+@define-color bg4          #7c6f64; /* Dark background highlight */
+@define-color fg           #ebdbb2; /* Default foreground */
+@define-color fg0          #fbf1c7; /* Light foreground */
+@define-color fg1          #ebdbb2; /* Default foreground */
+@define-color fg2          #d5c4a1; /* Darkish foreground */
+@define-color fg3          #bdae93; /* Dark foreground */
+@define-color fg4          #a89984; /* Darker foreground */
+@define-color red          #cc241d; /* Red */
+@define-color green        #98971a; /* Green */
+@define-color yellow       #d79921; /* Yellow */
+@define-color blue         #458588; /* Blue */
+@define-color purple       #b16286; /* Purple */
+@define-color aqua         #689d6a; /* Aqua */
+@define-color orange       #d65d0e; /* Orange */
+@define-color gray         #928374; /* Gray */
+@define-color red_bright   #fb4934; /* Bright Red */
+@define-color green_bright #b8bb26; /* Bright Green */
+@define-color yellow_bright #fabd2f; /* Bright Yellow */
+@define-color blue_bright  #83a598; /* Bright Blue */
+@define-color purple_bright #d3869b; /* Bright Purple */
+@define-color aqua_bright  #8ec07c; /* Bright Aqua */
+@define-color orange_bright #fe8019; /* Bright Orange */
+@define-color gray_bright  #a89984; /* Bright Gray */
 
 * {
 	font-family: "Inter", "JetBrains Mono NF";
 	font-size: 13px;
-	color: @purple_bright;
+	color: #ebdbb2;
     text-shadow: none;
 }
 
 #waybar {
-    background-color: @bg_h;
-    border-bottom: solid 3px @purple_bright;
+    /* background-color:  rgba(0, 0, 0, 0.5); */
+    background-color: transparent;
+    /* border-bottom: 2px solid #ebdbb2; */
 }
 
 .modules-left, .modules-center, .modules-right {
-    border: 0px solid @fg;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 0px solid #ebdbb2;
     border-radius: 10px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
     box-shadow: none;
     transition: all .4s ease;
 }
@@ -63,8 +65,8 @@
 
 tooltip {
 	border-radius: 10px;
-    background-color:  alpha(@bg, 0.8);
-    border: solid 2px @fg;
+    background-color:  alpha(black, 0.5);
+    border: solid 2px #ebdbb2;
 }
 
 #custom-apple {
@@ -94,7 +96,7 @@ tooltip {
 }
 
 #workspaces button.empty * {
-    color: alpha(@purple_bright, 0.4);
+    color: alpha(#000000, 0.3);
 }
 
 #workspaces button.active * {
@@ -140,7 +142,6 @@ tooltip {
 	padding: 0px 6px;
 	border-radius: 20px;
 	background-color: transparent;
-    font-weight: bold;
 }
 
 #clock {
@@ -149,12 +150,12 @@ tooltip {
 }
 
 #cpu, #memory, #bluetooth, #network, #custom-spotlight {
-    color: @purple;
+    color: #d79921;
     transition: all .4s ease;
 }
 
 #custom-apple {
-    color: @purple;
+    color: #d79921;
 }
 
 #clock:hover, 
@@ -167,17 +168,17 @@ tooltip {
 #temperature:hover,
 #custom-finder:hover,
 #custom-spotlight:hover {
-    color: @green;
+    color: @blue_bright;
 }
 
 #battery {
     padding: 0px 5px;
     transition: all .3s ease;
-    color: @purple_bright;
+    color: @fg;
 }
 
 #battery.charging {
-    color: @purple_bright;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {

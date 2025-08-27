@@ -3,7 +3,7 @@
     width = 300
     padding = 20
     corner_radius = 16
-    frame_width = 4
+    frame_width = 2
     background = "#28282866"
     foreground = "#ebdbb2"
     frame_color = "#ebdbb2"

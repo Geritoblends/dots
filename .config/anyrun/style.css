@@ -1,11 +1,10 @@
-
-
 entry {
-border-radius: 20px 20px 0px 0px;
+/* border-radius: 20px 20px 0px 0px; */
+border-radius: 20px 5px 0px 0px;
 min-height: 40px;
-background-color: alpha(black, 0.5);
-color: alpha(#ebdbb2, 1);
-border: solid 2px alpha(#ebdbb2, 1);
+background-color: alpha(#191724, 1);
+color: alpha(#c4a7e7, 1);
+border: solid 3px alpha(#c4a7e7, 1);
 border-bottom: none;
 font-size: 22px;
 box-shadow: none;
@@ -22,11 +21,11 @@ window {
 
 
 list {
-border-radius: 0px 0px 20px 20px;
-background-color: alpha(black, 0.5);
+border-radius: 0px 0px 20px 5px;
+background-color: alpha(#191724, 1);
 min-height: 20px;
-/* border: solid 4px alpha(#ebdbb2, 0.6); */
-border: solid 2px alpha(#ebdbb2, 1);
+/* border: solid 4px alpha(#c4a7e7, 0.6); */
+border: solid 3px alpha(#c4a7e7, 1);
 border-top: none;
 margin-bottom: 6px;
 }
@@ -46,11 +45,11 @@ border: none;
 }
 
 #match:selected {
-  background-color: alpha(#ebdbb2, 0.2);
+  background-color: alpha(#c4a7e7, 0.2);
 }
 
 #plugin label, #plugin image {
-	color: alpha(#ebdbb2, 0.8);
+	color: alpha(#c4a7e7, 0.8);
 }
 
 #plugin image {

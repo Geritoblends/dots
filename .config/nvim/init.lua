@@ -304,7 +304,14 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 vim.keymap.set("n", "<leader>rp", ":w<CR>:!poetry run python %<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>rr", ":w<CR>:!Rscript %<CR>", { noremap = true, silent = false })
+vim.keymap.set('n', '<M-j>', ':call append(line("."), "")<CR>',
+    { noremap = true, silent = true, desc = 'Add line below' })
+vim.keymap.set('n', '<M-k>', ':call append(line(".")-1, "")<CR>',
+    { noremap = true, silent = true, desc = 'Add line above' })
+vim.keymap.set('n', 'K', 'kdd', { noremap = true, desc = 'Delete line above' })
 vim.keymap.set("n", "<leader>rg", ":w<CR>:!go run %<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>sv", ":vsp<CR>", { noremap = true, silent = false })
 
 -- Add this to the end of your init.lua file
 
@@ -338,4 +345,4 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
-require("colors.maincolorscheme").setup()
+require("colors.rosepine").setup()
