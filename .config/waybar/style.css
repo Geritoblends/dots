@@ -34,13 +34,13 @@
 * {
 	font-family: "Inter", "JetBrains Mono NF";
 	font-size: 13px;
-	color: @purple_bright;
+	color: @fg;
     text-shadow: none;
 }
 
 #waybar {
-    background-color: @bg_h;
-    border-bottom: solid 3px @purple_bright;
+    background-color: alpha(black, 0.5);
+    border-bottom: solid 0px @purple_bright;
 }
 
 .modules-left, .modules-center, .modules-right {
@@ -90,15 +90,14 @@ tooltip {
 
 #workspaces button * {
     transition: all .3s ease;
-    border: solid 0px transparent;
 }
 
 #workspaces button.empty * {
-    color: alpha(@purple_bright, 0.4);
+    color: alpha(@fg, 0.3);
 }
 
 #workspaces button.active * {
-    color: @purple;
+    color: @fg;
 }
 
 #workspaces button.urgent * {
@@ -109,7 +108,7 @@ tooltip {
 }
 
 #workspaces button:hover * {
-    color: @purple;
+    color: @fg;
 }
 
 #tray {
@@ -149,12 +148,12 @@ tooltip {
 }
 
 #cpu, #memory, #bluetooth, #network, #custom-spotlight {
-    color: @purple;
+    color: alpha(@fg, 0.5);
     transition: all .4s ease;
 }
 
 #custom-apple {
-    color: @purple;
+    color: @fg;
 }
 
 #clock:hover, 
@@ -173,11 +172,11 @@ tooltip {
 #battery {
     padding: 0px 5px;
     transition: all .3s ease;
-    color: @purple_bright;
+    color: @fg;
 }
 
 #battery.charging {
-    color: @purple_bright;
+    color: @green;
 }
 
 #battery.warning:not(.charging) {

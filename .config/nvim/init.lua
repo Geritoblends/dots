@@ -312,6 +312,8 @@ vim.keymap.set('n', 'K', 'kdd', { noremap = true, desc = 'Delete line above' })
 vim.keymap.set("n", "<leader>rg", ":w<CR>:!go run %<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { noremap = true, silent = false })
 vim.keymap.set("n", "<leader>sv", ":vsp<CR>", { noremap = true, silent = false })
+vim.keymap.set("n", "<leader>rty", ":!typora %<CR>", { desc = "Insert empty line below" })
+vim.keymap.set("n", "<leader>pa", "\"apA", { noremap = true, silent = false })
 
 -- Add this to the end of your init.lua file
 

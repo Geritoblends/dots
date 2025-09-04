@@ -115,6 +115,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export DATABASE_URL="postgres://postgres:mysecretpassword@localhost:5432/postgres"
 
+mkcd() { 
+    mkdir $1 && cd $1 
+}
+
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -159,11 +163,11 @@ alias tree="tree -I target -I node_modules"
 alias home="cd ~"
 alias nvimcolors="cd ~/.config/nvim/lua/colors"
 alias wlogoutdir="cd ~/.config/wlogout"
+alias footconf="nvim ~/.config/foot/foot.ini"
+alias tmpa="nvim ~/.bashrc.d/tmp_aliases.sh && source ~/.bashrc"
 
-# Temporales
-alias rustlings="cd ~/Documents/projects/rustlings"
-alias todoapp="cd ~/Documents/projects/todoapp-rs"
-alias cbs="crb structs1"
-alias dcu="docker compose up -d"
-alias dcd="docker compose down"
-alias sqlclient="psql -h localhost -U postgres"
+if [ -d "$HOME/.bashrc.d" ]; then
+    for file in "$HOME"/.bashrc.d/*.sh; do
+        [ -r "$file" ] && source "$file"
+    done
+fi

@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Exit on error
@@ -9,7 +8,7 @@ DOTS_DIR="$HOME/dots"
 CONFIG_DIR="$DOTS_DIR/.config"
 
 # Create necessary folders
-mkdir -p "$CONFIG_DIR/hypr" "$CONFIG_DIR/wlogout/res" "$CONFIG_DIR/waybar" "$CONFIG_DIR/anyrun" "$CONFIG_DIR/nvim" "$CONFIG_DIR/dunst" "$CONFIG_DIR/fastfetch" "$CONFIG_DIR/kitty" "$CONFIG_DIR/mpd" "$CONFIG_DIR/ncmpcpp" "$CONFIG_DIR/mpv" "$CONFIG_DIR/.local/bin"
+mkdir -p "$CONFIG_DIR/hypr" "$CONFIG_DIR/wlogout/res" "$CONFIG_DIR/waybar" "$CONFIG_DIR/anyrun" "$CONFIG_DIR/nvim" "$CONFIG_DIR/dunst" "$CONFIG_DIR/fastfetch" "$CONFIG_DIR/kitty" "$CONFIG_DIR/mpd" "$CONFIG_DIR/ncmpcpp" "$CONFIG_DIR/mpv" "$CONFIG_DIR/.local/bin" "$CONFIG_DIR/.bashrc.d"
 
 # Copy files
 # Hyprland & Hyprlock
@@ -20,8 +19,7 @@ cp -f "$HOME/.config/wlogout/"{layout,style.css} "$CONFIG_DIR/wlogout/"
 cp -rf "$HOME/.config/wlogout/res/"* "$CONFIG_DIR/wlogout/res/"
 
 # Anyrun
-cp -f "$HOME/.config/anyrun/"* "$CONFIG_DIR/anyrun/"
-cp -f "$HOME/.config/kidex.ron" "$CONFIG_DIR/kidex.ron"
+cp -f "$HOME/.config/anyrun/"* "$CONFIG_DIR/anyrun/" 
 
 # Wofi
 cp -rf "$HOME/.config/wofi/"* "$CONFIG_DIR/wofi/"
@@ -51,6 +49,7 @@ cp -f "$HOME/.config/ncmpcpp/bindings" "$CONFIG_DIR/ncmpcpp/bindings"
 
 # Bashrc
 cp -f "$HOME/.bashrc" "$DOTS_DIR/"
+cp -rf "$HOME/.bashrc.d"/* "$CONFIG_DIR/.bashrc.d/"
 
 # Zshrc
 cp -f "$HOME/.zshrc" "$DOTS_DIR/"
