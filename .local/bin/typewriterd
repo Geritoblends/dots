@@ -1,0 +1,68 @@
+#!/bin/bash
+
+
+typewrite_with_sound() {
+    local text="$1"
+    local rate="${2:-15}"
+    local count=0
+    local delay=$(awk "BEGIN { print 1/$rate }")
+    for ((i = 0; i < ${#text}; i++)); do
+        char="${text:$i:1}"
+        echo -n "$char"
+        ((count++))
+        if (( count % 2 == 0 )); then
+            play -nq synth 0.03 pinknoise band 1000 100 gain -10 &
+        fi
+        sleep "$delay"
+    done
+}
+
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 \"Text 1\" \"Text 2\" ..."
+    exit 1
+fi
+
+
+for msg in "$@"; do
+    clear  
+    typewrite_with_sound "$msg"
+    printf ""
+    read -s  
+done
+
+clear
+typewrite_with_sound "¿Quieres ser mi "
+typewrite_with_sound "tilina"
+sleep 0.4
+for i in {1..6}; do
+    echo -ne "\b \b"
+    sleep 0.05
+done
+typewrite_with_sound "novia"
+typewrite_with_sound "? (si/no): "
+read -r answer
+
+case "$answer" in
+    [sS]|[sS][iI])
+        echo ":)"
+        sleep 1
+        hyprctl dispatch movetoworkspacesilent 2, title:proposal
+        sleep 2
+        swww img --transition-duration 1.5 --transition-type outer --transition-pos 0.146,0.023 --transition-step  90 ~/Pictures/Wallpapers/paris_night.jpg
+        fireworks_sound &
+        kitty --config ~/.config/kitty/kitty_transparent.conf --title firework1 -- bash -c firework -d 4 &
+        sleep 40
+        hyprctl dispatch movetoworkspacesilent 2, title:firework1
+        killall fireworks_sound
+        swww img --transition-duration 1.5 --transition-type outer --transition-pos 0.146,0.023 --transition-step  90 ~/Pictures/Wallpapers/pink_roses_dark.jpg
+        kitty --config ~/.config/kitty/kitty_transparent.conf --title bonsai -- bash -c "cbonsai -lL 70 -c 'georgy' -m 'gracias por siempre darle vida a cada momento. espero que juntos construyamos más recuerdos que las hojas de éste arbol. - Gero'"
+        ;;
+    *)
+        echo ""
+        killall swww-daemon
+        killall mpd
+        killall foot
+        exit 0
+        ;;
+esac

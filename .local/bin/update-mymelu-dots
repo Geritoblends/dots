@@ -1,0 +1,48 @@
+
+#!/bin/bash
+
+# Exit on error
+set -e
+
+# Define your repo path
+DOTS_DIR="$HOME/mymelu-dots"
+CONFIG_DIR="$DOTS_DIR/.config"
+
+# Create necessary folders
+mkdir -p "$CONFIG_DIR/hypr" "$CONFIG_DIR/wlogout/res" "$CONFIG_DIR/waybar" "$CONFIG_DIR/wofi"
+mkdir -p "$CONFIG_DIR/nvim"
+
+# Copy files
+
+# Hyprland & Hyprlock
+cp -f "$HOME/.config/hypr/hyprland.conf" "$CONFIG_DIR/hypr/"
+cp -f "$HOME/.config/hypr/hyprlock.conf" "$CONFIG_DIR/hypr/"
+cp -f "$HOME/.config/hypr/hypridle.conf" "$CONFIG_DIR/hypr/"
+
+# Wlogout
+cp -f "$HOME/.config/wlogout/layout" "$CONFIG_DIR/wlogout/"
+cp -f "$HOME/.config/wlogout/style.css" "$CONFIG_DIR/wlogout/"
+cp -rf "$HOME/.config/wlogout/res/"* "$CONFIG_DIR/wlogout/res/"
+
+# Wofi
+cp -f "$HOME/.config/wofi/config" "$CONFIG_DIR/wofi/"
+cp -f "$HOME/.config/wofi/style.css" "$CONFIG_DIR/wofi/"
+
+# Waybar
+cp -f "$HOME/.config/waybar/config" "$CONFIG_DIR/waybar/"
+cp -f "$HOME/.config/waybar/style.css" "$CONFIG_DIR/waybar/"
+
+# Neovim
+cp -f "$HOME/.config/nvim/init.lua" "$CONFIG_DIR/nvim/"
+
+# Bashrc
+cp -f "$HOME/.bashrc" "$DOTS_DIR/"
+
+
+# Git stage, commit, and push
+git -C "$DOTS_DIR" add .
+git -C "$DOTS_DIR" commit -m "Update dotfiles on $(date '+%Y-%m-%d %H:%M')"
+git -C "$DOTS_DIR" push
+
+
+echo "✅ Dotfiles synced and pushed to GitHub!"

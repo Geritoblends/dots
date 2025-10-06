@@ -4,19 +4,21 @@
     padding = 20
     corner_radius = 16
     frame_width = 2
-    background = "#28282866"
-    foreground = "#ebdbb2"
-    frame_color = "#ebdbb2"
+    background = "#161616"  
+    foreground = "#dde1e6"
+    frame_color = "#262626"
     gap_size = 5
 
 [urgency_low]
     timeout = 3
+    frame_color = "#262626"   
+    foreground = "#dde1e6"   
 
 [urgency_normal]
     timeout = 5
+    frame_color = "#262626" 
 
 [urgency_critical]
     timeout = 15
-    background = "#282828"
-    foreground = "#fb4934"
-    frame_color = "#fb4934"
+    foreground = "#ff6f00"  
+    frame_color = "#ff6f00"

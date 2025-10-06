@@ -7,8 +7,7 @@ COL_CURRENT_PATH='\[\e[37m\]' # The color of the current directory full path
 COL_GIT_STATUS_CLEAN='\[\e[93m\]' # Color of fresh git branch name, with NO changes
 COL_GIT_STATUS_CHANGES='\[\e[92m\]' # Color of git branch, affter its diverged from remote
 
-## Text Styles
-RESET='\[\e[0m\]' # What color will comand outputs be in
+## Text Styles RESET='\[\e[0m\]' # What color will comand outputs be in
 BOLD='\[\e[1m\]' # BOLD
 
 ## Config
@@ -165,6 +164,7 @@ alias nvimcolors="cd ~/.config/nvim/lua/colors"
 alias wlogoutdir="cd ~/.config/wlogout"
 alias footconf="nvim ~/.config/foot/foot.ini"
 alias tmpa="nvim ~/.bashrc.d/tmp_aliases.sh && source ~/.bashrc"
+alias niriconf="nvim ~/.config/niri/config.kdl"
 
 if [ -d "$HOME/.bashrc.d" ]; then
     for file in "$HOME"/.bashrc.d/*.sh; do

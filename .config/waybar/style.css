@@ -1,128 +1,122 @@
-@define-color bg_h         #191724; /* Hard contrast background */
-@define-color bg           #1f1d2e; /* Normal background */
-@define-color bg_s         #26233a; /* Soft contrast background */
-@define-color bg0_h        #191724; /* Hard contrast background */
-@define-color bg0          #1f1d2e; /* Normal background */
-@define-color bg0_s        #26233a; /* Soft contrast background */
-@define-color bg1          #2a273f; /* Darker background */
-@define-color bg2          #393552; /* Darkish background */
-@define-color bg3          #555169; /* Dark background highlight */
-@define-color bg4          #6e6a86; /* Dark background highlight */
-@define-color fg           #e0def4; /* Default foreground */
-@define-color fg0          #f0f0f0; /* Light foreground */
-@define-color fg1          #e0def4; /* Default foreground */
-@define-color fg2          #c4c7cd; /* Darkish foreground */
-@define-color fg3          #908caa; /* Dark foreground */
-@define-color fg4          #6e6a86; /* Darker foreground */
-@define-color red          #eb6f92; /* Red */
-@define-color green        #9ccfd8; /* Green */
-@define-color yellow       #f6c177; /* Yellow */
-@define-color blue         #31748f; /* Blue */
-@define-color purple       #eb6f92; /* Purple */
-@define-color aqua         #ebbcba; /* Aqua */
-@define-color orange       #ea9a97; /* Orange */
-@define-color gray         #908caa; /* Gray */
-@define-color red_bright   #eb6f92; /* Bright Red */
-@define-color green_bright #9ccfd8; /* Bright Green */
-@define-color yellow_bright #f6c177; /* Bright Yellow */
-@define-color blue_bright  #31748f; /* Bright Blue */
-@define-color purple_bright #c4a7e7; /* Bright Purple */
-@define-color aqua_bright  #ebbcba; /* Bright Aqua */
-@define-color orange_bright #ea9a97; /* Bright Orange */
-@define-color gray_bright  #908caa; /* Bright Gray */
+@define-color base00             #080808;  /* surface */
+@define-color bg01               #262626;  /* base */
+@define-color base02             #26233a;  /* overlay */
+@define-color bg03               #525252;  /* muted */
+@define-color base04             #908caa;  /* subtle */
+@define-color base05             #e0def4;  /* text */
+@define-color base06             #f0f0f3;  /* love/fallback light */
+@define-color base07             #9ccfd8;  /* foam */
+
+@define-color red                #ff4f00;  /* love */
+@define-color orange             #ff6f00;
+@define-color peach              #ea9a97;  /* rose */
+@define-color yellow             #ffab91;  /* gold */
+@define-color green              #42be65;  /* pine */
+@define-color teal               #9ccfd8;  /* foam */
+@define-color magenta            #673ab7;  /* iris */
+@define-color bright_magenta     #be95ff;  /* highlight (approx violet) */
+@define-color flamingo           #ebbcba;  /* highlight (rosewater) */
+
+@define-color fg        @base05;
+@define-color bg        @base00;
+@define-color accent    @blue;
 
 * {
-	font-family: "Inter", "JetBrains Mono NF";
-	font-size: 13px;
-	color: @fg;
+    font-family: "JetBrains Mono NF";
+    font-size: 15px;
+    font-weight: 600;
+    color: @red;
     text-shadow: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
 }
 
 #waybar {
-    background-color: alpha(black, 0.5);
-    border-bottom: solid 0px @purple_bright;
+    background-color: alpha(@bg, 1);
 }
 
 .modules-left, .modules-center, .modules-right {
-    border: 0px solid @fg;
-    border-radius: 10px;
+    background-color: transparent; /* base00 with opacity */
+    border-radius: 0px 0px 0px 0px;
     margin-top: 0px;
-    margin-bottom: 0px;
     box-shadow: none;
     transition: all .4s ease;
 }
 
 .modules-left {
-    margin-left: 10px;
+    margin-top: 10px;
+    background-color: transparent;
+
 }
 
 .modules-right {
-    margin-right: 10px;
+    margin-bottom: 15px;
 }
 
+.modules-center {
+    background-color: transparent;
+}
 
 tooltip {
-	border-radius: 10px;
-    background-color:  alpha(@bg, 0.8);
-    border: solid 2px @fg;
+    border-radius: 10px;
+    background-color: rgba(24, 24, 37, 1); /* base01 with opacity */
+    border: solid 2px @accent;
 }
 
 #custom-apple {
-    margin-left: 15px;
-    font-size: 20px;
+    margin-left: -5px;
+    font-size: 24px;
+    color: @red;
+    padding: 0px 0px;
 }
 
 #workspaces {
-	margin: 0 3px 0px 3px;
+    margin: 0 5px 0px 0px;
     background-color: transparent;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 0px 0px 0px 0px;
 }
 
 #workspaces button {
     font-size: 5px;
     border-radius: 8px;
     padding: 0px;
-    padding-right: 4px;
+    padding-right: 0px;
     background-image: none;
     transition: all .4s ease;
 }
 
-
 #workspaces button * {
     transition: all .3s ease;
+    border: solid 0px transparent;
+    box-shadow: transparent;
+    outline: transparent;
 }
 
 #workspaces button.empty * {
-    color: alpha(@fg, 0.3);
+    color: alpha(@red, 0.2);
 }
 
 #workspaces button.active * {
-    color: @fg;
-}
-
-#workspaces button.urgent * {
-}
-
-#workspaces button:hover {
-    box-shadow: none;
+    color: @red;
 }
 
 #workspaces button:hover * {
-    color: @fg;
+    color: @red;
 }
 
 #tray {
-	margin: 0px 2px;
-	border-radius: 0px;
+    margin: 0px 2px;
+    margin-top: 4px;
+    border-radius: 0px;
 }
 
 #tray menu {
-    background-color:  rgba(255, 222, 222, 0.7);
+    background-color: rgba(255, 222, 222, 1);
 }
 
 #tray * {
-	padding: 0 6px;
-    color: @orange_bright;
+    padding: 0 0px;
 }
 
 #mode,
@@ -135,42 +129,38 @@ tooltip {
 #pulseaudio,
 #backlight,
 #clock {
-	margin: 0px 2px;
-	padding: 0px 6px;
-	border-radius: 20px;
-	background-color: transparent;
-    font-weight: bold;
+    margin: 10px 0px;
+    padding: 0px 5px;
+    border-radius: 20px;
+    background-color: transparent;
 }
 
 #clock {
     margin-left: 5px;
     margin-right: 5px;
+    color: @red;
 }
 
-#cpu, #memory, #bluetooth, #network, #custom-spotlight {
-    color: alpha(@fg, 0.5);
+#cpu, #memory, #bluetooth, #network, #custom-spotlight, #temperature {
+    color: @fg;
     transition: all .4s ease;
 }
 
-#custom-apple {
-    color: @fg;
-}
-
-#clock:hover, 
+#clock:hover,
 #custom-notification:hover,
 #bluetooth:hover,
 #network:hover,
-#battery:hover, 
+#battery:hover,
 #cpu:hover,
 #memory:hover,
 #temperature:hover,
 #custom-finder:hover,
 #custom-spotlight:hover {
-    color: @green;
+    color: @peach;
 }
 
 #battery {
-    padding: 0px 5px;
+    padding: 0px 0px;
     transition: all .3s ease;
     color: @fg;
 }
@@ -179,15 +169,7 @@ tooltip {
     color: @green;
 }
 
-#battery.warning:not(.charging) {
-    color: @red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
+#battery.warning:not(.charging),
 #battery.critical:not(.charging) {
     color: @red;
     animation-name: blink;
@@ -198,7 +180,7 @@ tooltip {
 }
 
 #battery.charging.full {
-    color: @orange_bright;
+    color: @peach;
 }
 
 @keyframes blink {
@@ -209,5 +191,27 @@ tooltip {
 
 #custom-cava {
     margin: 0px 10px;
+}
+
+#mpd {
+    color: @fg;
+    margin-top: 5px;
+        font-size: 0px;
+}
+
+#cpu {
+    color: alpha(@red, 0.6);
+}
+
+#memory {
+    color: alpha(@red, 0.6);
+}
+
+#network {
+    color: alpha(@red, 0.6);
+}
+
+#temperature {
+    color: alpha(@red, 0.6);
 }
 

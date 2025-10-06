@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Check arguments
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 \"Text 1\" \"Text 2\" ..."
+    exit 1
+fi
+
+# Print text like a typewriter with beep
+
+
+typewrite() {
+    local text="$1"
+    local count=0
+    for ((i=0; i<${#text}; i++)); do
+        char="${text:$i:1}"
+        echo -n "$char"
+        ((count++))
+        if (( count % 1 == 0 )); then
+            play -nq synth 0.03 pinknoise band 1000 100 gain -10 &
+        fi
+        sleep 0.06
+    done
+}
+
+
+
+for msg in "$@"; do
+    clear
+    typewrite "$msg"
+    printf "  -->"
+    read -s
+done
+
+clear
