@@ -58,7 +58,7 @@
         "network": {
             "format-wifi": "{signalStrength}%  ",
             "format-ethernet":" ",
-            "format-disconnected": " ",
+            "format-disconnected": "  ",
             "tooltip-format-disconnected": "Error",
             "tooltip-format-wifi": "{essid} ({signalStrength}%)",
             "tooltip-format-ethernet": "{ifname} 🖧 ",

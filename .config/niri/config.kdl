@@ -145,7 +145,7 @@ layout {
     }
 
     // You can change the default width of the new windows.
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 0.5; }
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
@@ -283,6 +283,7 @@ spawn-at-startup "kidex"
 spawn-at-startup "/home/gero/.local/bin/battery_advice"
 spawn-at-startup "mpd"
 spawn-at-startup "waybar"
+spawn-at-startup "/home/gero/.config/ags/inverted_bar_corners.tsx"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -321,16 +322,6 @@ animations {
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
-
-// Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
 
 window-rule {
     match at-startup=true
@@ -415,8 +406,13 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 8
+    geometry-corner-radius 12
     clip-to-geometry true
+}
+
+window-rule {
+    match at-startup=true
+    default-column-width { proportion 1.0; }
 }
 
 binds {
@@ -583,7 +579,7 @@ binds {
     Mod+Period { expel-window-from-column; }
 
     Mod+D { switch-preset-column-width; }
-    Mod+Shift+D { switch-preset-column-width-back; }
+    // Mod+Shift+D { switch-preset-column-width-back; }
     // Cycling through the presets in reverse order is also possible.
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
@@ -609,7 +605,7 @@ binds {
     // * adjust width as a percentage of screen width: "-10%" or "+10%"
     // Pixel sizes use logical, or scaled, pixels. I.e. on an output with scale 2.0,
     // set-column-width "100" will make the column occupy 200 physical screen pixels.
-    Mod+Minus { set-column-width "-10%"; }
+    Mod+Shift+D { set-column-width "-20%"; }
     Mod+Equal { set-column-width "+10%"; }
 
     // Finer height adjustments when in column with other windows.

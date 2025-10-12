@@ -15,21 +15,21 @@ app.start({
         background-color: transparent;
         border-radius: 50px 0 0 50px;
         box-shadow: 
-            0 0 0 0px #161616;
+            0 0 0 0px #080808;
     }
 
     .desucker {
         background-color: transparent;
         border-radius: 50px 0 0 50px;
         box-shadow: 
-            0 0px 0 12px alpha(#161616, 1);
+            0 0px 0 12px alpha(#080808, 1);
     }
 
     .antisucker {
         background-color: transparent;
         border-radius: 50px 0 0 50px;
         box-shadow: 
-        0 0px 0 0px #161616;
+        0 0px 0 0px #080808;
     }
 
         `,

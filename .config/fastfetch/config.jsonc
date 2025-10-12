@@ -1,16 +1,13 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "/home/gero/.config/fastfetch/pngs/pumpking.png ",
-    "height": 18
-  },
-  "display": {
-    "separator": " : "
+    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | sort -R | head -1)",
+    "height": 9
   },
   "modules": [
     {
       "type": "custom",
-      "format": "  \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+      "format": "  \u001b[38;5;59m  \u001b[38;5;161m  \u001b[38;5;41m  \u001b[38;5;221m  \u001b[38;5;33m  \u001b[38;5;141m  \u001b[38;5;44m  \u001b[38;5;15m"
     },
     {
       "type": "custom",
@@ -18,7 +15,7 @@
     },
     {
       "type": "custom",
-      "format": "    github.com/Geritoblends/dots "
+      "format": "  \u001b[38;5;141m  github.com/Geritoblends/dots \u001b[0m"
     },
     {
       "type": "custom",
@@ -27,66 +24,60 @@
     {
       "type": "os",
       "key": "   OS",
-      "keyColor": "38;5;19"  // Dark Blue
+      "keyColor": "38;5;33"
     },
     {
       "type": "kernel",
       "key": "   Kernel",
-      "keyColor": "97"  // White
+      "keyColor": "38;5;15"
     },
     {
       "type": "packages",
       "key": "  󰏗 Packages",
-      "keyColor": "34"  // Keeping the same
+      "keyColor": "38;5;41"
     },
     {
       "type": "display",
       "key": "  󱍜 Display",
-      "keyColor": "38;5;208"  // Random: Bright Orange
+      "keyColor": "38;5;221"
     },
     {
       "type": "wm",
       "key": "   WM",
-      "keyColor": "38;5;81"  // Light Blue
+      "keyColor": "38;5;141"
     },
     {
       "type": "terminal",
       "key": "   Terminal",
-      "keyColor": "90"  // Grey
+      "keyColor": "38;5;59"
     },
     {
       "type": "media",
-      "key": "  󰝚  Music",
-      "keyColor": "34"
+      "key": "  󰝚 Music",
+      "keyColor": "38;5;44"
     },
-
-     {
-            "type": "command",
-            "key": "  󱦟 OS Age ",
-            "keyColor": "31",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-        },
-
-     {
-            "type": "uptime",
-            "key": "  ",
-            "keyColor": "34",
-        },
-    // {
-    //   "type": "custom",
-    //   "format": "  󰊤  GitHub : Vinayydv3695",
-    //   "keyColor": "\u001b[38;5;75m"
-    // },
-{
-  "type": "battery",
-  "key": "   Battery",
-  "keyColor": "38;5;228"  // Light Yellow
-},
+    {
+      "type": "command",
+      "key": "  󱦟 OS Age",
+      "keyColor": "38;5;161",
+      "format": "{1} days",
+      "command": "stat -c %W / | awk '{print int((systime()-$1)/86400)}'"
+    },
+    {
+      "type": "uptime",
+      "key": "   Uptime",
+      "keyColor": "38;5;41"
+    },
+    {
+      "type": "battery",
+      "key": "   Battery",
+      "keyColor": "38;5;221"
+    },
     "break",
     {
       "type": "title",
       "key": "   User",
-      "keyColor": "38;5;250"  // Black
+      "keyColor": "38;5;141"
     },
     {
       "type": "custom",
@@ -94,26 +85,23 @@
     },
     {
       "type": "cpu",
-      "format": "{1}",
       "key": "   CPU",
-      "keyColor": "38;5;118"  // Bright Green
+      "keyColor": "38;5;41"
     },
     {
       "type": "gpu",
-      "format": "{2}",
       "key": "   GPU",
-      "keyColor": "38;5;220"  // Yellow
+      "keyColor": "38;5;221"
     },
     {
       "type": "gpu",
-      "format": "{3}",
       "key": "   GPU Driver",
-      "keyColor": "38;5;27"  // Cyan
+      "keyColor": "38;5;33"
     },
     {
       "type": "memory",
       "key": "   Memory",
-      "keyColor": "38;5;99"  // Pinkish Purple
+      "keyColor": "38;5;161"
     },
     {
       "type": "custom",
@@ -122,8 +110,7 @@
     "break",
     {
       "type": "custom",
-      "format": "  \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
-    },
-    "break"
+      "format": "  \u001b[38;5;59m  \u001b[38;5;161m  \u001b[38;5;41m  \u001b[38;5;221m  \u001b[38;5;33m  \u001b[38;5;141m  \u001b[38;5;44m  \u001b[38;5;15m"
+    }
   ]
 }

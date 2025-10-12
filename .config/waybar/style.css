@@ -1,5 +1,5 @@
 @define-color base00             #080808;  /* surface */
-@define-color bg01               #262626;  /* base */
+@define-color bg01               #161616;  /* base */
 @define-color base02             #26233a;  /* overlay */
 @define-color bg03               #525252;  /* muted */
 @define-color base04             #908caa;  /* subtle */
@@ -7,12 +7,15 @@
 @define-color base06             #f0f0f3;  /* love/fallback light */
 @define-color base07             #9ccfd8;  /* foam */
 
-@define-color red                #ff4f00;  /* love */
+@define-color red                #ee5396;   /* love */
 @define-color orange             #ff6f00;
+@define-color yellow             #ffab91;
 @define-color peach              #ea9a97;  /* rose */
 @define-color yellow             #ffab91;  /* gold */
 @define-color green              #42be65;  /* pine */
-@define-color teal               #9ccfd8;  /* foam */
+@define-color blue               #0f62fe;   /* foam */
+@define-color cyan               #78a9ff;
+@define-color bright_cyan        #33b1ff;
 @define-color magenta            #673ab7;  /* iris */
 @define-color bright_magenta     #be95ff;  /* highlight (approx violet) */
 @define-color flamingo           #ebbcba;  /* highlight (rosewater) */
@@ -25,7 +28,7 @@
     font-family: "JetBrains Mono NF";
     font-size: 15px;
     font-weight: 600;
-    color: @red;
+    color: @bright_magenta;
     text-shadow: none;
     outline: none;
     box-shadow: none;
@@ -60,14 +63,14 @@
 
 tooltip {
     border-radius: 10px;
-    background-color: rgba(24, 24, 37, 1); /* base01 with opacity */
-    border: solid 2px @accent;
+    background-color: @bg; /* base01 with opacity */
+    border: solid 3px @bg01;
 }
 
 #custom-apple {
     margin-left: -5px;
     font-size: 24px;
-    color: @red;
+    color: @bright_magenta;
     padding: 0px 0px;
 }
 
@@ -94,15 +97,15 @@ tooltip {
 }
 
 #workspaces button.empty * {
-    color: alpha(@red, 0.2);
+    color: alpha(@bright_magenta, 0.2);
 }
 
 #workspaces button.active * {
-    color: @red;
+    color: @bright_magenta;
 }
 
 #workspaces button:hover * {
-    color: @red;
+    color: @bright_magenta;
 }
 
 #tray {
@@ -138,7 +141,7 @@ tooltip {
 #clock {
     margin-left: 5px;
     margin-right: 5px;
-    color: @red;
+    color: @yellow;
 }
 
 #cpu, #memory, #bluetooth, #network, #custom-spotlight, #temperature {
@@ -200,18 +203,25 @@ tooltip {
 }
 
 #cpu {
-    color: alpha(@red, 0.6);
+    color: @cyan;
 }
 
 #memory {
-    color: alpha(@red, 0.6);
+    color: @yellow;
 }
 
 #network {
-    color: alpha(@red, 0.6);
+    color: @red;
 }
 
 #temperature {
-    color: alpha(@red, 0.6);
+    color: @magenta;
 }
 
+
+window#waybar.empty {
+  opacity: 1;
+}
+window#waybar {
+  opacity: 1;
+}

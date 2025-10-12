@@ -11,9 +11,9 @@ box.main {
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
-    border: 4px solid #ff6f00;
-    outline: 8px solid #161616;
-    background-color: #161616;
+    border: 4px solid #be95ff;
+    outline: 4px solid #080808;
+    background-color: #080808;
     box-shadow: 0 0 5px black;
     font-weight: 700;
     font-size: 32px;
@@ -60,7 +60,7 @@ label.plugin.info {
 }
 
 .match:selected {
-  border-left: 4px solid #ff6f00;
+  border-left: 4px solid #be95ff;
   background: transparent;
   animation: fade 0.1s linear;
 }

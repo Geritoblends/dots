@@ -293,13 +293,6 @@ require("lazy").setup({
             "MunifTanjim/nui.nvim",
         },
     },
-    {
-        "nyoom-engineering/oxocarbon.nvim"
-        -- Add in any other configuration;
-        --   event = foo,
-        --   config = bar
-        --   end,
-    },
 })
 -- Basic keymaps
 vim.keymap.set("n", "<leader>w", ":w<CR>")
@@ -352,24 +345,5 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.api.nvim_buf_set_keymap(0, 't', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
     end,
 })
-vim.opt.background = "dark" -- set this to dark or light
-vim.cmd.colorscheme "oxocarbon"
--- require("colors.oxocarbon").setup()
 
-local palette = {
-    bg = "#080808",
-    highlight_low = "#161616",
-    highlight_med = "#262626"
-}
-
-local hl = vim.api.nvim_set_hl
-hl(0, "Normal", { bg = palette.bg })
-hl(0, "NormalNC", { bg = palette.bg })
-hl(0, "LineNr", { bg = palette.bg })
-hl(0, "CursorLine", { bg = palette.highlight_low })
-hl(0, "CursorLineNr", { bold = true, bg = palette.bg })
-hl(0, "Visual", { bg = palette.highlight_med })
-hl(0, "SignColumn", { bg = palette.bg })
-hl(0, "StatusLine", { bg = palette.bg })
-hl(0, "StatusLineNC", { bg = palette.bg })
-hl(0, "VertSplit", { bg = palette.bg })
+require("colors.gruvbox").setup()

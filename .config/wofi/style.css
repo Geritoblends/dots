@@ -1,5 +1,5 @@
 * {
-    color: #dde1e6;
+    color: #ebdbb2;
     font-size: 16px;
     font-family: "Inter"
 }
@@ -7,22 +7,22 @@
 window {
     padding: 20px;
     border-radius: 0px;
-    background-color: alpha(#161616, 1);
-    border: solid 4px #262626;
-    box-shadow: 0px 0px 0px 3px #161616;
+    background-color: alpha(#0a0a0a, 0.5);
+    border: solid 2px #282828;
+    box-shadow: 0px 0px 0px 3px #0a0a0a;
 
 }
 
 #input {
     margin: 25px;
     border-radius: 0px;
-    background-color: alpha(#262626, 1);
-    border: solid 2px #262626;
-    color: #dde1e6;
+    background-color: alpha(#0a0a0a, 0.5);
+    border: solid 0px #282828;
+    color: #ebdbb2;
 }
 
 image {
-    color: #262626;
+    color: #282828;
 }
 
 #input:focus {
@@ -30,18 +30,18 @@ image {
 }
 
 #entry {
-    margin: 0px 25px 16px 25px;
-    border-radius: 15px;
+    margin: 0px 25px 16px 0px;
+    border-radius: 0px;
 }
 
 #entry:selected {
-    background-color: #161616;
+    background-color: alpha(#0a0a0a, 0.4);
     border: none;
-    margin-left: 55px;
+    margin-left: 25px;
 }
 
 #entry:selected #text {
-    color: #ff6f00;
+    color: #ebdbb2;
 }
 
 #entry:focus, #entry:active {
