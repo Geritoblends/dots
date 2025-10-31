@@ -6,16 +6,16 @@
 
 window {
     padding: 20px;
-    border-radius: 0px;
-    background-color: alpha(#0a0a0a, 0.5);
-    border: solid 2px #282828;
-    box-shadow: 0px 0px 0px 3px #0a0a0a;
-
+    border-radius: 20px;
+    background-color: alpha(#0a0a0a, 0.8);
+    border: solid 0px transparent;
+    box-shadow: 0px 0px 0px 0px #0a0a0a;
+    border-bottom: solid 0px alpha(#0a0a0a, 0.8);
 }
 
 #input {
     margin: 25px;
-    border-radius: 0px;
+    border-radius: 15px;
     background-color: alpha(#0a0a0a, 0.5);
     border: solid 0px #282828;
     color: #ebdbb2;
@@ -35,8 +35,9 @@ image {
 }
 
 #entry:selected {
-    background-color: alpha(#0a0a0a, 0.4);
+    background-color: alpha(#0a0a0a, 0.2);
     border: none;
+    border-radius: 15px;
     margin-left: 25px;
 }
 

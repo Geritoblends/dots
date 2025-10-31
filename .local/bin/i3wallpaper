@@ -1,0 +1,31 @@
+#!/bin/bash
+# Directory containing wallpapers
+WALLPAPER_DIR="$HOME/Pictures/Wallpapers/catppuccin"
+FEH_CONFIG="$HOME/.fehbg"
+I3_CONFIG="$HOME/.config/i3/config"
+
+while true; do
+    # List files in the wallpaper directory and send them to rofi
+    SELECTED=$(ls "$WALLPAPER_DIR"/*.{png,jpg,jpeg,gif,webp} 2>/dev/null | xargs -n 1 basename | rofi -dmenu -p "Select Wallpaper" -width 600 -lines 10)
+    
+    if [ -n "$SELECTED" ]; then
+        # Full path to the selected wallpaper
+        WALLPAPER_PATH="$WALLPAPER_DIR/$SELECTED"
+        
+        # Set wallpaper with feh
+        feh --bg-fill "$WALLPAPER_PATH"
+        
+        # Update .fehbg
+        echo "#!/bin/sh" > "$FEH_CONFIG"
+        echo "feh --no-fehbg --bg-fill '$WALLPAPER_PATH'" >> "$FEH_CONFIG"
+        chmod +x "$FEH_CONFIG"
+        
+        # Update i3 config $wallpaper variable
+        sed -i "s|^set \$wallpaper .*|set \$wallpaper $WALLPAPER_PATH|" "$I3_CONFIG"
+        
+        break
+        
+    else
+        break
+    fi
+done

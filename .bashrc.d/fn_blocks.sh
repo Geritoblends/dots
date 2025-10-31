@@ -1,4 +1,4 @@
-toggle_pad() {
+toggle-pad() {
     if lsmod | grep -q '^bcm5974'; then
         sudo modprobe -r bcm5974
         echo "Trackpad disabled"
@@ -6,6 +6,10 @@ toggle_pad() {
         sudo modprobe bcm5974
         echo "Trackpad enabled"
     fi
+}
+
+mkcd() { 
+    mkdir $1 && cd $1 
 }
 
 reload-wifi() {
@@ -32,7 +36,7 @@ trimwav() {
     echo "Created: $outfile"
 }
 
-trim_mp4() {
+trim-mp4() {
     if [ $# -lt 3 ]; then
         echo "Usage: trim_mp4 <input.mp4> <start_seconds> <duration_seconds> [output.mp4]"
         return 1
@@ -59,7 +63,7 @@ rmf() {
   file=$(find . -maxdepth 1 -type f 2>/dev/null | fzf) && rm -i "$file"
 }
 
-zip_current() {
+zip-current() {
     # Get the name of the current folder
     local folder_name
     folder_name=$(basename "$PWD")
@@ -71,4 +75,8 @@ zip_current() {
     zip -r "$output" .
 
     echo "Zipped '$folder_name' to '$output'"
+}
+
+reload-waybar () {
+    pkill waybar && waybar &
 }

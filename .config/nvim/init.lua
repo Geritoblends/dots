@@ -346,4 +346,4 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
-require("colors.gruvbox").setup()
+require("colors.catppuccinmocha").setup()

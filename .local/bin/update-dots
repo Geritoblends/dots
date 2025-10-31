@@ -6,7 +6,7 @@ set -e
 DOTS_DIR="$HOME/dots"
 CONFIG_DIR="$DOTS_DIR/.config"
 
-mkdir -p "$CONFIG_DIR/hypr" "$CONFIG_DIR/wlogout/res" "$CONFIG_DIR/waybar" "$CONFIG_DIR/anyrun" "$CONFIG_DIR/nvim" "$CONFIG_DIR/dunst" "$CONFIG_DIR/fastfetch" "$CONFIG_DIR/kitty" "$CONFIG_DIR/mpd" "$CONFIG_DIR/ncmpcpp" "$CONFIG_DIR/mpv" "$DOTS_DIR/.local/bin" "$CONFIG_DIR/wofi" "$CONFIG_DIR/foot" "$CONFIG_DIR/niri" "$DOTS_DIR/.bashrc.d" "$CONFIG_DIR/gtk-3.0" "$CONFIG_DIR/gtk-4.0" "$CONFIG_DIR/ags"
+mkdir -p "$CONFIG_DIR/hypr" "$CONFIG_DIR/wlogout/res" "$CONFIG_DIR/waybar" "$CONFIG_DIR/anyrun" "$CONFIG_DIR/nvim" "$CONFIG_DIR/dunst" "$CONFIG_DIR/kitty" "$CONFIG_DIR/mpd" "$CONFIG_DIR/ncmpcpp" "$CONFIG_DIR/mpv" "$DOTS_DIR/.local/bin" "$CONFIG_DIR/wofi" "$CONFIG_DIR/foot" "$CONFIG_DIR/niri" "$DOTS_DIR/.bashrc.d" "$CONFIG_DIR/gtk-3.0" "$CONFIG_DIR/gtk-4.0" "$CONFIG_DIR/ags"
 
 # Copy files
 # Hyprland & Hyprlock
@@ -35,9 +35,6 @@ cp -rf "$HOME/.config/nvim/lua/"* "$CONFIG_DIR/nvim/lua/"
 
 # Dunst
 cp -rf "$HOME/.config/dunst/"* "$CONFIG_DIR/dunst/"
-
-# fastfetch
-cp -rf "$HOME/.config/fastfetch/"* "$CONFIG_DIR/fastfetch/"
 
 # Kitty
 cp -f "$HOME/.config/kitty/kitty.conf" "$CONFIG_DIR/kitty/kitty.conf"
